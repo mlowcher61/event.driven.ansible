@@ -6,4 +6,4 @@
 
     - name: Print out the call clear
       ansible.builtin.debug:
-        msg: "The webchecks are good for aap.kona.services:8443"
+        msg: "The webchecks are good for aap.kona.services"
