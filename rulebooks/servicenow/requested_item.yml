@@ -13,4 +13,4 @@
       action:
         run_job_template:
           name: "web checks are good"
-          organization: "AmesCo"
+          organization: "AmesCO"
