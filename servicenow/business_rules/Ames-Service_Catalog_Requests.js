@@ -14,15 +14,27 @@
     json["number"] = current.number.getDisplayValue();
   }
 
+  if (current.sys_id) {
+    json["sys_id"] = current.sys_id.getValue("sys_id");
+  }
+
+  if (current.state) {
+    json["state"] = current.state.getDisplayValue();
+  }
+
+  if (current.short_description) {
+    json["short_description"] = current.short_description.getValue("short_description");
+  }
+
+  if (current.stage) {
+    json["stage"] = current.stage.getDisplayValue();
+  }
+
   if (current.opened_by) {
     var requester = current.opened_by.getRefRecord();
     if (requester.isValidRecord()) {
       json["requester"] = requester.getValue("email");
     }
-  }
-
-  if (current.sys_id) {
-    json["sys_id"] = current.sys_id.getValue("sys_id");
   }
 
   for (var key in current.variables) {
