@@ -1,5 +1,5 @@
 (function executeRule(current, previous) {
-  var REST_MESSAGE_NAME = "Ames - Event Driven Ansible - kona";
+  var REST_MESSAGE_NAME = 'Ames - Event Driven Ansible - kona';
   var EVENT_NAME = "SERVICE_CATALOG";
 
   var r = new sn_ws.RESTMessageV2(REST_MESSAGE_NAME, "POST");
@@ -10,6 +10,10 @@
     json["catalog_item"] = current.cat_item.getDisplayValue();
   }
 
+  if (current.number) {
+    json["number"] = current.number.getDisplayValue();
+  }
+
   if (current.opened_by) {
     var requester = current.opened_by.getRefRecord();
     if (requester.isValidRecord()) {
@@ -17,8 +21,8 @@
     }
   }
 
-  if (current.request) {
-    json["request_name"] = current.request.getValue("short_description");
+  if (current.sys_id) {
+    json["sys_id"] = current.sys_id.getValue("sys_id");
   }
 
   for (var key in current.variables) {
