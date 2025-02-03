@@ -1,0 +1,16 @@
+---
+- name: Listen for approved requested items from ServiceNow
+  hosts: all
+  sources:
+    - ansible.eda.webhook:
+        host: 0.0.0.0
+        port: 5003
+
+  rules:
+
+    - name: Run the windows daily demo workflow
+      condition: event.payload.short_description  == "Ames AAP Windows AWS Daily Demo"
+      action:
+        run_job_template:
+          name: "web checks are good"
+          organization: "AmesCo"
