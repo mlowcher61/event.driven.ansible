@@ -1,0 +1,9 @@
+---
+- name: Print snow output here
+  hosts: localhost
+
+  tasks:
+
+    - name: Printing ...........
+      ansible.builtin.debug:
+        msg: "Ticket number {{ ticket_number }} has sys_id {{  ticket_sys_id }}"
