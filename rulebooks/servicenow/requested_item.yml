@@ -12,7 +12,7 @@
       condition: event.payload.short_description  == "Ames AAP Windows AWS Daily Demo"
       action:
         run_job_template:
-          name: "web checks are good"
+          name: "print snow output"
           organization: "AmesCO"
           job_args:
             extra_vars:
