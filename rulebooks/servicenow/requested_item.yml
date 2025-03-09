@@ -23,7 +23,7 @@
       condition: event.payload.short_description  == "Ames AAP Linux AWS Daily Demo"
       action:
         run_workflow_template:
-          name: "Daily Demo Linux Workflow"
+          name: "Run Workflow for Linux Daily Demo"
           organization: "AmesCO"
           job_args:
             extra_vars:
