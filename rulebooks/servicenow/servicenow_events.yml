@@ -33,8 +33,8 @@
     - name: Run the automated patching workflow
       condition: event.payload.short_description  == "Control01 Ansible Automation Platform (AAP) automated vulnerability remediation"
       action:
-        run_job_template:
-          name: "print snow output"
+        run_workflow_template:
+          name: "Insights CVE R1000 Remediator"
           organization: "AmesCO"
           job_args:
             extra_vars:
